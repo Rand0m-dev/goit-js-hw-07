@@ -19,10 +19,8 @@ const images = [
 const navEl = document.querySelector('#gallery');
 
 const element = images.map(image => {
-    const navItem = document.createElement('li');
-  navItem.insertAdjacentHTML('beforeend', `<img src='${image.url}' alt='${image.alt}'></img>`);
-    return navItem;
+    return `<li><img src='${image.url}' alt='${image.alt}' class='img'></img></li>`
 });
 
-navEl.append(...element);
+navEl.insertAdjacentHTML(`beforeend`, element.join(''));
 console.log(navEl);
